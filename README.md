@@ -1,7 +1,7 @@
 # vision
 A helpful bot for the matrix ecosystem, currently used for some smaller tasks.
 
-## Usage
+## Setup
 Clone the repo to your preferred location:
 ```sh
 git clone https://github.com/theforcer/vision
@@ -9,7 +9,7 @@ git clone https://github.com/theforcer/vision
 
 Set the execution bit on the trigger scripts that you want to run on startup:
 ```sh
-chmod +x trigger-scripts/pihole
+chmod +x scripts/pihole
 ```
 
 Copy and rename the config file and fill in the required keys etc:

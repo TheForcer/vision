@@ -8,4 +8,5 @@ then
     exit
 fi
 
-echo $(python /opt/python-scripts/pihole.py)
+str = $(python /opt/python-scripts/pihole.py)
+echo $str

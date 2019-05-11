@@ -7,5 +7,5 @@ services:
     restart: unless-stopped
     volumes:
       - ./python-scripts:/opt/python-scripts/
-      - ./trigger-scripts:/opt/trigger-scripts/
+      - ./scripts:/opt/scripts/
       - ./vision.cfg:/opt/vision.cfg
