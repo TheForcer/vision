@@ -11,8 +11,8 @@ fi
 args="$( echo "$@" | sed "s/$regex//I" )"
 if [ -z "$args" ]; then
     wetter="$(python /opt/python-scripts/weather.py default)"
-    echo $wetter
+    echo "$wetter"
 else
     wetter="$(python /opt/python-scripts/weather.py "$args")"
-    echo $wetter
+    echo "$wetter"
 fi
