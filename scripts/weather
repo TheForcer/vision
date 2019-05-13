@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+regex='^!weather'
+
+if [ -n "$CONFIG" ]
+then
+    echo "$regex"
+    exit
+fi
+
+args="$( echo "$@" | sed "s/$regex//I" )"
+if [ -z "$args" ]; then
+    wetter="$(python /opt/python-scripts/weather.py default)"
+    echo $wetter
+else
+    wetter="$(python /opt/python-scripts/weather.py "$args")"
+    echo $wetter
+fi
