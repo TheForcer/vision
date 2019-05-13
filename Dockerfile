@@ -5,6 +5,7 @@ ADD vision-bot.py /opt/
 RUN pip install requests && \
     pip install matrix_client && \
     pip install configparser && \
+    pip install pyowm && \
     mkdir /opt/data
 
 VOLUME [ "/opt/python-scripts", "/opt/scripts", "/opt/vision.cfg" ]
