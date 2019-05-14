@@ -24,9 +24,12 @@ def getForecast(location):
     json_data = json.loads(requests.request("GET", url, data="", headers="").text)
     return json_data
 
-def createString(json_data):
+def createString(json_data, location):
     forecast_list = json_data["list"]
-    string = ""
+    if location == "default":
+        string = "Wetter in: "+cfg_weather['location']+"""\n"""
+    else:
+        string = "Wetter in: "+location+"""\n"""
     i = 0
     while i < 3:
         utc_dt = utc.localize(datetime.utcfromtimestamp(forecast_list[i]["dt"]))
@@ -36,4 +39,4 @@ def createString(json_data):
         i+=1
     return string
 
-print(createString(getForecast(sys.argv[1])))
+print(createString(getForecast(sys.argv[1]), sys.argv[1]))
