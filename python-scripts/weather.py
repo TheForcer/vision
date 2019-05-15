@@ -25,6 +25,8 @@ def getForecast(location):
     return json_data
 
 def createString(json_data, location):
+    if json_data["cod"] == "404":
+        return "Die gesuchte Stadt wurde nicht gefunden."
     forecast_list = json_data["list"]
     if location == "default":
         string = "Wetter in: "+cfg_weather['location']+"""\n"""
@@ -35,7 +37,7 @@ def createString(json_data, location):
         utc_dt = utc.localize(datetime.utcfromtimestamp(forecast_list[i]["dt"]))
         de_tz = timezone('Europe/Berlin')
         de_dt = utc_dt.astimezone(de_tz)
-        string = string+str(de_dt.strftime(fmt))+" / "+str(forecast_list[i]["main"]["temp"])+"°C / "+forecast_list[i]["weather"][0]["main"]+"""\n"""
+        string = string+str(de_dt.strftime(fmt))+" / "+str(forecast_list[i]["main"]["temp"])+"°C / "+forecast_list[i]["weather"][0]["description"]+"""\n"""
         i+=1
     return string
 
