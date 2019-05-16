@@ -1,7 +1,7 @@
 # vision
 A helpful bot for the matrix ecosystem, currently used for some smaller tasks.
 
-## Setup
+## Setup & Start
 Clone the repo to your preferred location:
 ```sh
 git clone https://github.com/theforcer/vision
@@ -18,10 +18,19 @@ cp vision.example.cfg vision.cfg
 nano/vim/pico vision.cfg
 ```
 
-Start up the container with docker-compose (add -d if you want the process to run in the background):
+Start up the bot/container with docker-compose (add -d if you want the process to run in the background):
 ```sh
 docker-compose up
 ```
+
+## Script Usage
+
+### PiHole
+The PiHole script is used to get a quick overlook of the total amount of (blocked) DNS queries. Configure the respective section in the config file with your PiHole's IP, and with a quick ```!pihole``` you'll get the information you need.
+
+### Weather
+This handy little script gives you a quick weather forecast for the next 3 three-hour intervals. Just call ```!weather city``` to get the latest information from the openweathermap API.
+You'll need to [create an account](https://home.openweathermap.org/users/sign_up) over at OWM to get your API key, which you then have to put in the bot's config file, as well as a default location, which will be used when no city parameter is provided in the call.
 
 ## Update tiny-matrix-bot
 To update to a current version of the bot script, run the following command in the repo.
