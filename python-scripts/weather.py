@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 
 # Import config file and create config section
 config = configparser.ConfigParser()
-config.read("/opt/vision.cfg")
+config.read("/opt/config/vision.cfg")
 cfg_weather = config["weather"]
 
 # Default timezone and date format

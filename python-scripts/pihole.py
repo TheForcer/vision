@@ -4,7 +4,7 @@ import json
 
 # Import config file and create config sections
 config = configparser.ConfigParser()
-config.read("/opt/vision.cfg")
+config.read("/opt/config/vision.cfg")
 cfg_pihole = config["pihole"]
 
 # Return a specific stat from the PiHole API
