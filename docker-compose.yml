@@ -8,4 +8,4 @@ services:
     volumes:
       - ./python-scripts:/opt/python-scripts/
       - ./scripts:/opt/scripts/
-      - ./vision.cfg:/opt/vision.cfg
+      - ./config:/opt/config/

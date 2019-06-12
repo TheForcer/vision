@@ -1,13 +1,13 @@
 FROM python:3.7-slim
 
-ADD vision-bot.py /opt/
+LABEL name="vision"
+LABEL authors="Felix"
+LABEL description="Small python matrix-bot for a couple of small tasks"
 
-RUN pip install requests && \
-    pip install matrix_client && \
-    pip install configparser && \
-    pip install pytz && \
+ADD . /opt/
+VOLUME [ "/opt/python-scripts", "/opt/scripts", "/opt/config" ]
+
+RUN pip install -r /opt/requirements.txt && \
     mkdir /opt/data
 
-VOLUME [ "/opt/python-scripts", "/opt/scripts", "/opt/vision.cfg" ]
-
-CMD [ "python", "/opt/vision-bot.py" ]
+CMD [ "python3", "/opt/vision-bot.py" ]

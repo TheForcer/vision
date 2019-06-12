@@ -230,7 +230,7 @@ if __name__ == "__main__":
         logging.basicConfig(level=logging.INFO)
     cfg = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
-        "vision.cfg")
+        "config/vision.cfg")
     if len(sys.argv) == 2:
         cfg = sys.argv[1]
     if not os.path.isfile(cfg):

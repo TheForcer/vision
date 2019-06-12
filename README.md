@@ -14,8 +14,8 @@ chmod +x scripts/pihole
 
 Copy and rename the config file and fill in the required keys etc:
 ```sh
-cp vision.example.cfg vision.cfg
-nano/vim/pico vision.cfg
+cp config/vision.example.cfg config/vision.cfg
+nano/vim/pico config/vision.cfg
 ```
 
 Start up the bot/container with docker-compose (add -d if you want the process to run in the background):
@@ -36,5 +36,5 @@ You'll need to [create an account](https://home.openweathermap.org/users/sign_up
 To update to a current version of the bot script, run the following command in the repo.
 This will replace the vision-bot.py file.
 ```sh
-curl https://raw.githubusercontent.com/4nd3r/tiny-matrix-bot/master/tiny-matrix-bot.py | sed 's/"tiny-matrix-bot.cfg"/"vision.cfg"/g' > vision-bot.py
+curl https://raw.githubusercontent.com/4nd3r/tiny-matrix-bot/master/tiny-matrix-bot.py | sed 's%"tiny-matrix-bot.cfg"%"config/vision.cfg"%g' > vision-bot.py
 ```
